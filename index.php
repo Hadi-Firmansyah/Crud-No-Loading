@@ -98,12 +98,36 @@
                         <p class="text-danger" id="err_nama_siswa"></p>
                     </div>
                 </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Jurusan</label>
+                        <select name="jurusan" id="jurusan" class="form-control" required="true">
+                        <option value=""></option>
+                        <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                        <option value="Teknik Komputer Jaringan">Teknik Komputer Jaringan</option>
+                        <option value="Broadcasting">Broadcasting</option>
+                        <option value="Multimedia">Multimedia</option>
+                        <option value="Teknik Elektronika Industri">Teknik Elektronika Industri</option>
+                        </select>
+                        <p class="text-danger" id="err_jurusan"></p>
+                    </div>
+                </div>
+
+                <div class="col-sm-3">
+                    <div class="form-group">
+                        <label>Tanggal Masuk</label>
+                        <input type="date" name="tanggal_masuk" id="tanggal_masuk" class="form-control" required="true">
+                        <p class="text-danger" id="err_tanggal_masuk"></p>
+
+                    </div>
+                </div>
                 
                 <div class="col-sm-3">
                     <div class="form-group">
-                        <label for="Jenis Kelamin"></label><br>
-                        <input type="radio" name="jenkel" id="jenkel1" value="Laki-Laki" required="true">Laki-Laki
-                        <input type="radio" name="jenkel" id="jenkel2" value="Perempuan" required="true">Perempuan
+                        <label for="Jenis Kelamin">Jenis Kelamin</label><br>
+                        <input type="radio" name="jenkel" id="jenkel1" value="Laki-Laki" required="true"> Laki-Laki
+                        <input type="radio" name="jenkel" id="jenkel2" value="Perempuan" required="true"> Perempuan
                     </div>
                     <p class="text-danger" id="err_jenkel"></p>
                 </div>
