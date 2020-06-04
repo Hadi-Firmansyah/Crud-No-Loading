@@ -38,10 +38,9 @@
 
                 <td>
                     <button id="<?php echo $id; ?>" class="btn btn-success btn-sm edit_data">
-                    <i class="fa fa-edit"></i> Edit
-                    </button>
+                    <i class="fa fa-edit"></i> Edit </button>
                     <button id="<?php echo $id; ?>" class="btn btn-danger btn-sm hapus_data">
-                    <i class="fa fa-trash"></i> Delete</button>
+                    <i class="fa fa-trash"></i> Delete </button>
                 </td>
             </tr>
                 <?php }} else { ?>
@@ -90,7 +89,7 @@
         });
     });
 
-    $(document).on('click','hapus_data',function(){
+    $(document).on('click','.hapus_data',function(){
         var id = $(this).attr('id');
         $.ajax({
             type : 'POST',
