@@ -15,16 +15,16 @@
     <title>CRUD NO LOADING</title>
 <body>
     <!-- Jquery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquer/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Datatable -->
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery/dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <link rel="stylesheet" src="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css"></link>
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script> -->
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
             $('.data').load("data.php");
-            $("simpan").click(function(){
+            $("#simpan").click(function(){
                 var data = $('.form-data').serialize();
                 var jenkel1 = document.getElementById("jenkel1").value;
                 var jenkel2 = document.getElementById("jenkel2").value;
@@ -38,28 +38,28 @@
                 }else{
                     document.getElementById("err_nama_siswa").innerHTML = "";
                 }
-                if(alamat = ""){
+                if(alamat== ""){
                     document.getElementById("err_alamat").innerHTML = "Alamat Harus Diisi";
-                }esle{
+                }else{
                     document.getElementById("err_alamat").innerHTML = "";
                 }
-                if(jurusan=""){
+                if(jurusan==""){
                     document.getElementById("err_jurusan").innerHTML = "Jurusan Harus Diisi";
                 }else{
                     document.getElementById("err_jurusan").innerHTML = "";
                 }
-                if(tanggal_masuk=""){
+                if(tanggal_masuk==""){
                     document.getElementById("err_tanggal_masuk").innerHTML = "Tanggal Masuk Harus Diisi";
                 }else{
                     document.getElementById("err_tanggal_masuk").innerHTML = "";
                 }
-                if(document.getElementById("jenkel1").checked==false && document.getElementById("jenkel2").checked=false){
+                if(document.getElementById("jenkel1").checked==false && document.getElementById("jenkel2").checked==false){
                     document.getElementById("err_jenkel").innerHTML = "Jenis Harus Dipilih";
                 }else{
-                    document.getElementById("err_jankel").innerHTML = "";
+                    document.getElementById("err_jenkel").innerHTML = "";
                 }
 
-                if(nama_siswa!="" && tanggal_masuk!="" &&alamat="" &&jurusan!="" &&
+                if(nama_siswa!="" && tanggal_masuk!="" && alamat!="" && jurusan!="" &&
                 (document.getElementById("jenkel1").checked==true || document.getElementById("jenkel2").checked==true))
     {
         $.ajax({
@@ -141,7 +141,7 @@
 
             <div class="form-group">
                 <button type="button" name="simpan" class="btn btn-primary">
-                    <i class="fa fa-save"></i>Simpan
+                    <i class="fa fa-save"></i> Simpan
                 </button>
             </div> 
         </form>
