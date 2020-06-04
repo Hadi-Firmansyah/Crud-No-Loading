@@ -11,9 +11,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.20/js/jquery.dataTables.min.js"></script>
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" 
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- Data Tables -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.js">
-    <script src="https://cdn.datatables.net/1.10.19/js/jquery/dataTables.min.js"></script>
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.js"> -->
+    <!-- <script src="https://cdn.datatables.net/1.10.19/js/jquery/dataTables.min.js"></script> -->
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
@@ -143,7 +145,7 @@
             </div>
 
             <div class="form-group">
-                <button type="submit" name="simpan" class="btn btn-primary">
+                <button type="button" id="simpan" name="simpan" class="btn btn-primary">
                     <i class="fa fa-save"></i> Simpan
                 </button>
             </div> 
