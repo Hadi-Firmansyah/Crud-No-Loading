@@ -2,12 +2,12 @@
 session_start();
 include 'koneksi.php';
 
-$id = striplashes(strip_tags(htmlspecialchars($_POST['id'], ENT_QUOTES)));
-$nama_siswa = striplashes(strip_tags(htmlspecialchars($_POST['nama_siswa'], ENT_QUOTES)));
-$jenkel = striplashes(strip_tags(htmlspecialchars($_POST['jenkel'], ENT_QUOTES)));
-$alamat = striplashes(strip_tags(htmlspecialchars($_POST['alamat'], ENT_QUOTES)));
-$jurusan = striplashes(strip_tags(htmlspecialchars($_POST['jurusan'], ENT_QUOTES)));
-$tanggal_masuk = striplashes(strip_tags(htmlspecialchars($_POST['tanggal_masuk'], ENT_QUOTES)));
+$id = stripslashes(strip_tags(htmlspecialchars($_POST['id'], ENT_QUOTES)));
+$nama_siswa = stripslashes(strip_tags(htmlspecialchars($_POST['nama_siswa'], ENT_QUOTES)));
+$jenkel = stripslashes(strip_tags(htmlspecialchars($_POST['jenkel'], ENT_QUOTES)));
+$alamat = stripslashes(strip_tags(htmlspecialchars($_POST['alamat'], ENT_QUOTES)));
+$jurusan = stripslashes(strip_tags(htmlspecialchars($_POST['jurusan'], ENT_QUOTES)));
+$tanggal_masuk = stripslashes(strip_tags(htmlspecialchars($_POST['tanggal_masuk'], ENT_QUOTES)));
 
 if($id == ""){
     $query = "INSERT INTO tbl_siswa (nama_siswa, alamat, jurusan, jenis_kelamin, tgl_masuk) VALUES (?, ?, ?, ?, ?)";
@@ -24,5 +24,5 @@ if($id == ""){
 echo json_encode(['success' => 'Sukses']);
 
 $db1->close();
-
+    
 ?>
