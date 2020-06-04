@@ -14,7 +14,7 @@
         <?php
             include 'koneksi.php';
             $no = 1;
-            $query = "SELECT * FROM tbl_siswa BY id DESC";
+            $query = "SELECT * FROM tbl_siswa ORDER BY id DESC";
             $prepare1 = $db1->prepare($query);
             $prepare1->execute();
             $res1 = $prepare1->get_result();
@@ -37,17 +37,16 @@
                 <td><?php echo $tgl_masuk; ?></td>
 
                 <td>
-                <button id="<?php echo $id; ?>" class="btn btn-success btn-sm edit_data">
-                <i class="fa fa-edit"></i>Edit
-                </button>
-                <button id="<?php echo $id; ?>" class="btn btn-success btn-sm hapus_data">
-                <i class="fa fa-trash"></i>Edit
-                </button>
+                    <button id="<?php echo $id; ?>" class="btn btn-success btn-sm edit_data">
+                    <i class="fa fa-edit"></i> Edit
+                    </button>
+                    <button id="<?php echo $id; ?>" class="btn btn-danger btn-sm hapus_data">
+                    <i class="fa fa-trash"></i> Delete</button>
                 </td>
             </tr>
                 <?php }} else { ?>
                 <tr>
-                    <td colspan="7">Tidak Ada Data Ditemukan</td>
+                    <td colspan='7'>Tidak Ada Data Ditemukan</td>
                 </tr>
                 <?php } ?>
     </tbody>
@@ -67,10 +66,11 @@
     }
 
     $(document).on('click','.edit_data',function(){
-        var id = $(this.attr('id');
+        var id = $(this).attr('id');
         $.ajax({
             type : 'POST',
-            url : {id:id},
+            url : "get_data_all.php",
+            data : {id:id},
             dataType : 'json',
             success : function(response){
                 reset();
@@ -80,7 +80,7 @@
                 document.getElementById("alamat").value = response.alamat;
                 document.getElementById("jurusan").value = response.jurusan;
                 if(response.jenis_kelamin == "Laki-Laki"){
-                    document.getElementById(j"enkel1").checked = true;
+                    document.getElementById("jenkel1").checked = true;
                 }else{
                     document.getElementById("jenkel2").checked = true;
                 }
@@ -91,7 +91,7 @@
     });
 
     $(document).on('click','hapus_data',function(){
-        var id = $(this.attr('id');
+        var id = $(this).attr('id');
         $.ajax({
             type : 'POST',
             url : 'hapus_data.php',
